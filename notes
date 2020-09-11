@@ -1,4 +1,9 @@
 TODO LIST - 
+[x] - Download packages ( express, pg, body-parser )
+[x] - Create folder and file layout
+[x] - Create .gitignore
+[x] - Add 'npm start' to JSON
+
 [ ] - Create HTML
     [ ] - Set up input fields
     [ ] - Create div to append to
@@ -17,8 +22,8 @@ TODO LIST -
     [ ] - DELETE
         [ ] - Remove task from DOM and database
 
-[ ] - Create Vendors
-    [ ] - Add jQuery
+[x] - Create Vendors
+    [x] - Add jQuery
 
 [ ] - Create Server.js
     [ ] - Set up requires and modules
