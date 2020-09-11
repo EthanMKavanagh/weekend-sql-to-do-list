@@ -4,9 +4,9 @@ TODO LIST -
 [x] - Create .gitignore
 [x] - Add 'npm start' to JSON
 
-[ ] - Create HTML
-    [ ] - Set up input fields
-    [ ] - Create div to append to
+[x] - Create HTML
+    [x] - Set up input fields
+    [x] - Create div to append to
 
 [ ] - Create CSS
     [ ] - Add background color to body
