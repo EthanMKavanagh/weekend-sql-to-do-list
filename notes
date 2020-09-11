@@ -26,7 +26,7 @@ TODO LIST -
     [x] - Add jQuery
 
 [ ] - Create Server.js
-    [ ] - Set up requires and modules
+    [x] - Set up requires
     [ ] - GET
     [ ] - POST
     [ ] - PUT
