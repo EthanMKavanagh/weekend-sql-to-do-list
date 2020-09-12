@@ -81,3 +81,17 @@ function changeStatus(){
         console.log( err );
     } ); // end ajax PUT
 } // end changeStatus
+
+function deleteItem(){
+    let taskId = $( this ).data( 'id' );
+    $.ajax( {
+        method: 'DELETE',
+        url: `tasks/${ taskId }`
+    } ).then( function( response ){
+        console.log( 'inside ajax DELETE, response:', response );
+        getTasks();
+    } ).catch( function( err ){
+        alert( 'error in ajax DELETE' );
+        console.log( err );
+    } ); // end ajax
+} // end deleteItem

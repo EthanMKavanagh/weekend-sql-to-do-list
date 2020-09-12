@@ -17,8 +17,8 @@ TODO LIST -
     [x] - Create click listeners
     [x] - POST
     [x] - GET
-    [ ] - PUT
-        [ ] - Display whether the task is complete or not
+    [x] - PUT
+        [x] - Display whether the task is complete or not
     [ ] - DELETE
         [ ] - Remove task from DOM and database
 
@@ -29,7 +29,7 @@ TODO LIST -
     [x] - Set up requires
     [x] - GET
     [x] - POST
-    [ ] - PUT
+    [x] - PUT
     [ ] - DELETE
 
 [x] - Create Database.sql
