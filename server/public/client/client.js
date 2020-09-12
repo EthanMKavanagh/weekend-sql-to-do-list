@@ -89,7 +89,7 @@ function deleteItem(){
         url: `tasks/${ taskId }`
     } ).then( function( response ){
         console.log( 'inside ajax DELETE, response:', response );
-        getTasks();
+        getTask();
     } ).catch( function( err ){
         alert( 'error in ajax DELETE' );
         console.log( err );

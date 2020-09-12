@@ -79,3 +79,17 @@ app.put( '/tasks/:id', ( req, res ) => {
         res.sendStatus( 500 );
     } ); // end query
 } ); // end PUT
+
+// DELETE
+app.delete( '/tasks/:id', ( req, res ) => {
+    const queryString = 'DELETE FROM "to-do" WHERE "id" = $1;';
+    let taskId = req.params.id;
+    console.log( 'in app.delete, deleting:', taskId );
+    pool.query( queryString, [ taskId ] ).then( ( results ) => {
+        console.log( 'successful deletion' );
+        res.sendStatus( 200 );
+    } ).catch( ( err ) => {
+        console.log( 'error in app.deleteL', err );
+        res.sendStatus( 500 );
+    } ); // end ajax DELETE
+} ); // end DELETE
