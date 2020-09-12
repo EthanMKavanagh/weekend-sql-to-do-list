@@ -14,7 +14,7 @@ const Pool = pg.Pool;
 const pool = new Pool( {
     database: 'to-do-app',
     host: 'localhost',
-    post: 5432,
+    port: 5432,
     max: 12,
     idleTimeoutMillis: 30000
 } );

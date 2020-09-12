@@ -32,13 +32,28 @@ function getTask(){
         let el = $( '#listOut' );
         el.empty();
         for( let i = 0; i < response.length; i++ ){
-            el.append( `
+            if( response[ i ].status === 'Incomplete' ){
+                el.append( `
                 <tr>
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
-                    <td>${ response[[ i ]].status }</td>
+                    <td>${ response[ i ].status }</td>
+                    <td><button id="changeStatusBtn" data-id="${ response[ i ].id }">Change Status</button></td>
+                    <td><button id="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
                 </tr>
             ` ); // end append
+            } // end if
+            else{
+                el.append( `
+                <tr>
+                    <td>${ response[ i ].task }</td>
+                    <td>${ response[ i ].urgency }</td>
+                    <td>${ response[ i ].status }</td>
+                    <td></td>
+                    <td><button id="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
+                </tr>
+            ` ); // end append
+            } // end else
         } // end for
     } ).catch( function( err ) {
         alert( 'error in ajax GET' );
