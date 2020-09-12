@@ -37,7 +37,7 @@ function getTask(){
         for( let i = 0; i < response.length; i++ ){
             if( response[ i ].status === 'Incomplete' ){
                 el.append( `
-                <tr class="taskRow">
+                <tr>
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
@@ -48,7 +48,7 @@ function getTask(){
             } // end if
             else{
                 el.append( `
-                <tr class="taskRow">
+                <tr class="complete">
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
@@ -76,8 +76,6 @@ function changeStatus(){
     } ).then( function( response ){
         console.log( 'inside ajax PUT, response:', response );
         $( '.taskRow' ).addClass( 'complete' );
-        //$( '.taskRow' ).css( 'background-color:', 'green' );
-        //taskId.classList.add( 'complete' );
         getTask();
     } ).catch( function( err ){
         alert( 'error in ajax PUT' );
