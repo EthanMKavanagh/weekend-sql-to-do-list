@@ -26,6 +26,12 @@ app.listen( port, () => {
 
 // POST
 app.post( '/tasks', ( req, res ) => {
-    console.log( 'in app.post' );
+    console.log( 'in app.post, req.body:', req.body );
     res.sendStatus( 201 );
 } ); // end POST
+
+// GET
+app.get( '/tasks', ( req, res ) => {
+    console.log( 'in app.get' );
+    res.sendStatus( 200 );
+} ); // end GET
