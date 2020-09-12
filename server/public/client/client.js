@@ -33,11 +33,11 @@ function getTask(){
         el.empty();
         for( let i = 0; i < response.length; i++ ){
             el.append( `
-                <li>
-                    ${ response[ i ].task }
-                    ${ response[ i ].urgency }
-                    ${ response[[ i ]].status }
-                </li>
+                <tr>
+                    <td>${ response[ i ].task }</td>
+                    <td>${ response[ i ].urgency }</td>
+                    <td>${ response[[ i ]].status }</td>
+                </tr>
             ` ); // end append
         } // end for
     } ).catch( function( err ) {
