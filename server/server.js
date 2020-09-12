@@ -23,3 +23,9 @@ const pool = new Pool( {
 app.listen( port, () => {
     console.log( 'listen on port', port );
 } );
+
+// POST
+app.post( '/tasks', ( req, res ) => {
+    console.log( 'in app.post' );
+    res.sendStatus( 201 );
+} ); // end POST
