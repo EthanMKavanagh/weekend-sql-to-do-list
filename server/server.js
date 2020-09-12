@@ -60,3 +60,22 @@ app.get( '/tasks/:id', ( req, res ) => {
         res.sendStatus( 500 );
     } ) // end query
 } ); // end GET
+
+// PUT
+app.put( '/tasks/:id', ( req, res ) => {
+    console.log( 'in app.put, req.params.id:', req.params.id, ' and req.body:', req.body );
+    let queryString = '';
+    if( req.body.status === 'Incomplete' ){
+        queryString = 'UPDATE "to-do" SET "status" = \'Complete\' WHERE "id" = $1;';
+    } // end if
+    else{
+        console.log( 'somethings wrong in app.put conditional' );
+    } // end else
+    pool.query( queryString, [ req.params.id ] ).then( ( results ) => {
+        console.log( 'successful status change:', results );
+        res.sendStatus( 200 );
+    } ).catch( ( err ) => {
+        console.log( 'error in app.put:', err );
+        res.sendStatus( 500 );
+    } ); // end query
+} ); // end PUT

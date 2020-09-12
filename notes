@@ -14,7 +14,7 @@ TODO LIST -
     [ ] - Add text background color/text color to display that the task has been completed or not
 
 [ ] - Create Client.js
-    [ ] - Create click listeners
+    [x] - Create click listeners
     [x] - POST
     [x] - GET
     [ ] - PUT

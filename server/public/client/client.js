@@ -3,6 +3,8 @@ $( document ).ready( onReady );
 function onReady(){
     getTask();
     $( document ).on( 'click', '#addTaskBtn', addTask );
+    $( document ).on( 'click', '#changeStatusBtn', changeStatus );
+    $( document ).on( 'click', '#deleteBtn', deleteItem );
 } // end onReady
 
 function addTask(){
@@ -61,3 +63,21 @@ function getTask(){
         console.log( err );
     } ); // end ajax GET
 } // end getTask
+
+function changeStatus(){
+    let taskId = $( this ).data( 'id' );
+    console.log( 'in changeStatus' );
+    $.ajax( {
+        method: 'PUT',
+        url: `/tasks/${ taskId }`,
+        data: {
+            status: 'Incomplete'
+        } // end data
+    } ).then( function( response ){
+        console.log( 'inside ajax PUT, response:', response );
+        getTask();
+    } ).catch( function( err ){
+        alert( 'error in ajax PUT' );
+        console.log( err );
+    } ); // end ajax PUT
+} // end changeStatus
