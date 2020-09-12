@@ -43,7 +43,20 @@ app.get( '/tasks', ( req, res ) => {
     pool.query( queryString ).then( ( results ) => {
         res.send( results.rows );
     } ).catch( ( err ) => {
-        console.log( err );
+        console.log( 'error in app.get:', err );
         res.sendStatus( 500 );
     } ); // end query
+} ); // end GET
+
+// GET  (singular item )
+app.get( '/tasks/:id', ( req, res ) => {
+    let taskId = req.params.id;
+    console.log( 'in app.get taskId,', taskId );
+    let queryString = 'SELECT * FROM "to-do" WHERE "id" = $1;';
+    pool.query( queryString, [ taskId ] ).then( ( results ) => {
+        res.send( results.rows );
+    } ).catch( ( err ) => {
+        console.log( 'error in app.get singular item:', err );
+        res.sendStatus( 500 );
+    } ) // end query
 } ); // end GET

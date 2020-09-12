@@ -1,6 +1,7 @@
 $( document ).ready( onReady );
 
 function onReady(){
+    getTask();
     $( document ).on( 'click', '#addTaskBtn', addTask );
 } // end onReady
 
