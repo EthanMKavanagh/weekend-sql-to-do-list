@@ -3,8 +3,8 @@ $( document ).ready( onReady );
 function onReady(){
     getTask();
     $( document ).on( 'click', '#addTaskBtn', addTask );
-    $( document ).on( 'click', '#changeStatusBtn', changeStatus );
-    $( document ).on( 'click', '#deleteBtn', deleteItem );
+    $( document ).on( 'click', '.changeStatusBtn', changeStatus );
+    $( document ).on( 'click', '.deleteBtn', deleteItem );
 } // end onReady
 
 function addTask(){
@@ -37,23 +37,23 @@ function getTask(){
         for( let i = 0; i < response.length; i++ ){
             if( response[ i ].status === 'Incomplete' ){
                 el.append( `
-                <tr>
+                <tr class="taskRow">
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
-                    <td><button id="changeStatusBtn" data-id="${ response[ i ].id }">Change Status</button></td>
-                    <td><button id="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
+                    <td><button class="changeStatusBtn" data-id="${ response[ i ].id }">Change Status</button></td>
+                    <td><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
                 </tr>
             ` ); // end append
             } // end if
             else{
                 el.append( `
-                <tr>
+                <tr class="taskRow">
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
                     <td></td>
-                    <td><button id="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
+                    <td><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
                 </tr>
             ` ); // end append
             } // end else
@@ -75,6 +75,9 @@ function changeStatus(){
         } // end data
     } ).then( function( response ){
         console.log( 'inside ajax PUT, response:', response );
+        $( '.taskRow' ).addClass( 'complete' );
+        //$( '.taskRow' ).css( 'background-color:', 'green' );
+        //taskId.classList.add( 'complete' );
         getTask();
     } ).catch( function( err ){
         alert( 'error in ajax PUT' );

@@ -13,24 +13,24 @@ TODO LIST -
     [ ] - Add font-family and size to text
     [ ] - Add text background color/text color to display that the task has been completed or not
 
-[ ] - Create Client.js
+[x] - Create Client.js
     [x] - Create click listeners
     [x] - POST
     [x] - GET
     [x] - PUT
         [x] - Display whether the task is complete or not
-    [ ] - DELETE
-        [ ] - Remove task from DOM and database
+    [x] - DELETE
+        [x] - Remove task from DOM and database
 
 [x] - Create Vendors
     [x] - Add jQuery
 
-[ ] - Create Server.js
+[x] - Create Server.js
     [x] - Set up requires
     [x] - GET
     [x] - POST
     [x] - PUT
-    [ ] - DELETE
+    [x] - DELETE
 
 [x] - Create Database.sql
     [x] - Create database is Postico names "weekend-to-do-app"
