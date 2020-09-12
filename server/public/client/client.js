@@ -31,12 +31,12 @@ function getTask(){
         console.log( 'inside of ajax GET, response:', response );
         let el = $( '#listOut' );
         el.empty();
-        for( let task of tasks ){
+        for( let i = 0; i < response.length; i++ ){
             el.append( `
                 <li>
-                    ${ task.task }
-                    ${ task.urgency }
-                    ${ task.status }
+                    ${ response[ i ].task }
+                    ${ response[ i ].urgency }
+                    ${ response[[ i ]].status }
                 </li>
             ` ); // end append
         } // end for

@@ -1,4 +1,4 @@
--- Database Name: weekend-to-do-app
+-- Database Name: to-do-app
 -- Table Name: to-do
 
 CREATE TABLE "to-do"(
