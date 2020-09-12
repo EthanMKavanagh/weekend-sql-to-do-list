@@ -29,6 +29,17 @@ function getTask(){
         url: `/tasks`
     } ).then( function( response ) {
         console.log( 'inside of ajax GET, response:', response );
+        let el = $( '#listOut' );
+        el.empty();
+        for( let task of tasks ){
+            el.append( `
+                <li>
+                    ${ task.task }
+                    ${ task.urgency }
+                    ${ task.status }
+                </li>
+            ` ); // end append
+        } // end for
     } ).catch( function( err ) {
         alert( 'error in ajax GET' );
         console.log( err );
