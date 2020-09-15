@@ -8,10 +8,10 @@ TODO LIST -
     [x] - Set up input fields
     [x] - Create table to append to
 
-[ ] - Create CSS
-    [ ] - Add background color to body
-    [ ] - Add font-family and size to text
-    [ ] - Add text background color/text color to display that the task has been completed or not
+[x] - Create CSS
+    [x] - Add background color to body
+    [x] - Add font-family and size to text
+    [x] - Add text background color/text color to display that the task has been completed or not
 
 [x] - Create Client.js
     [x] - Create click listeners

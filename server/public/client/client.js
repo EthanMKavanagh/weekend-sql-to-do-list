@@ -37,12 +37,12 @@ function getTask(){
         for( let i = 0; i < response.length; i++ ){
             if( response[ i ].status === 'Incomplete' ){
                 el.append( `
-                <tr>
+                <tr class="incomplete">
                     <td>${ response[ i ].task }</td>
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
-                    <td><button class="changeStatusBtn" data-id="${ response[ i ].id }">Change Status</button></td>
-                    <td><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
+                    <td class="tableStatus"><button class="changeStatusBtn" data-id="${ response[ i ].id }">Change Status</button></td>
+                    <td class="tableDelete"><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
                 </tr>
             ` ); // end append
             } // end if
@@ -53,11 +53,13 @@ function getTask(){
                     <td>${ response[ i ].urgency }</td>
                     <td>${ response[ i ].status }</td>
                     <td></td>
-                    <td><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
+                    <td class="tableDelete"><button class="deleteBtn" data-id="${ response[ i ].id }">Delete</button></td>
                 </tr>
             ` ); // end append
             } // end else
         } // end for
+        $( '#taskIn' ).val( '' );
+        $( '#urgencyIn' ).val( '' );
     } ).catch( function( err ) {
         alert( 'error in ajax GET' );
         console.log( err );
@@ -75,7 +77,6 @@ function changeStatus(){
         } // end data
     } ).then( function( response ){
         console.log( 'inside ajax PUT, response:', response );
-        $( '.taskRow' ).addClass( 'complete' );
         getTask();
     } ).catch( function( err ){
         alert( 'error in ajax PUT' );

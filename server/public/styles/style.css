@@ -1,9 +1,22 @@
+body {
+    background-color: floralwhite;
+}
+
 .complete {
     background-color: lightgreen;
 }
 
-#taskIn, #urgencyIn, #addTaskBtn, #changeStatusBtn, #deleteBtn {
+.incomplete {
+    background-color: orangered;
+}
+
+#taskIn, #urgencyIn, #addTaskBtn {
     border: 2px solid black;
+    background-color: floralwhite;
+}
+
+.tableDelete, .tableStatus {
+    text-align: center;
 }
 
 #taskIn, #urgencyIn {
@@ -12,6 +25,8 @@
 
 #addTaskBtn {
     width: 70px;
+    border-radius: 5px;
+    background-color: floralwhite;
 }
 
 table {
@@ -23,8 +38,26 @@ table, th, td {
     border: 1px solid black;
 }
 
-th, td {
+th {
+    width: 200px;
+    padding: 5px;
+}
+
+td {
     width: 200px;
     font-weight: normal;
     padding: 5px;
+}
+
+h1, h2 {
+    font-family: monospace;
+    margin-left: 12px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#inputFields {
+    margin-left: 12px;
 }
