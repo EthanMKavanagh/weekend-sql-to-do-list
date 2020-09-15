@@ -45,7 +45,7 @@ app.post( '/tasks', ( req, res ) => {
 // GET
 app.get( '/tasks', ( req, res ) => {
     console.log( 'in app.get' );
-    const queryString = 'SELECT * FROM "to-do";';
+    const queryString = 'SELECT * FROM "to-do" ORDER BY "id" ASC;';
     pool.query( queryString ).then( ( results ) => {
         res.send( results.rows );
     } ).catch( ( err ) => {
